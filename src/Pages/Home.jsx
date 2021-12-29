@@ -1,7 +1,10 @@
 import React from 'react';
 import Announcement from '../Components/Announcement';
+import Categories from '../Components/Categories';
 import Navbar from '../Components/Navbar';
+import Products from '../Components/Products';
 import Slider from '../Components/Slider';
+import Newsletter from '../Components/Newsletter';
 
 const Home = () => {
     return (
@@ -9,6 +12,9 @@ const Home = () => {
             <Announcement />
             <Navbar />
             <Slider></Slider>
+            <Categories />
+            <Products></Products>
+            <Newsletter></Newsletter>
         </div>
     );
 };
