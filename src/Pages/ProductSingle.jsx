@@ -5,12 +5,14 @@ import Announcement from '../Components/Announcement';
 import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar';
 import Newsletter from '../Components/Newsletter';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  ${mobile({ flexDirection: 'column' })};
 `;
 
 const ImgContainer = styled.div`
@@ -26,6 +28,7 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
+  ${mobile({ padding: 0 })};
 `;
 
 const Title = styled.h1`
@@ -46,6 +49,7 @@ const FilterContainer = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: 'column', alignItems: 'center', flexWrap: 'wrap' })};
 `;
 
 const Filter = styled.div`

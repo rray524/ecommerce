@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Announcement from '../Components/Announcement';
 import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar';
+import { mobile } from '../responsive';
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -20,6 +21,7 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  ${mobile({ flexDirection: 'column' })};
 `;
 
 const TopButton = styled.button`
@@ -38,11 +40,13 @@ const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
   margin: 0px 10px;
+  ${mobile({ display: 'flex', flexDirection: 'column', margin: '9px 0' })};
 `;
 
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: 'column' })};
 `;
 
 const Info = styled.div`
@@ -52,15 +56,18 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: 'column' })};
 `;
 
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  ${mobile({ flexDirection: 'column' })};
 `;
 
 const Image = styled.img`
   width: 200px;
+  ${mobile({ width: '100%' })};
 `;
 
 const Details = styled.div`

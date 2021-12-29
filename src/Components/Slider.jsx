@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { sliderItems } from '../data';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
     width: 100%;
@@ -32,7 +33,7 @@ const Arrow = styled.div`
 `
 const Wrapper = styled.div`
     display:flex; 
-    transition: all 1.5s ease;
+    transition: all 1.5s ease-in;
     transform: translateX(${(props) => props.slideIndex * -100}vw);
     
 `
@@ -41,6 +42,7 @@ const Slide = styled.div`
     align-items: center;
     width: 100vw;
     background-color: #${(props) => props.bg};
+    ${mobile({ flexDirection: 'column' })};
     
 `
 const ImgContainer = styled.div`

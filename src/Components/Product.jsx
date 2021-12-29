@@ -1,6 +1,7 @@
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import React from 'react';
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 const Info = styled.div`
     opacity: 0;
@@ -41,6 +42,7 @@ const Circle = styled.div`
 `
 const Image = styled.img`
     height: 78%;
+    ${mobile({ width: '100%' })};
     z-index: 2;
 `
 
