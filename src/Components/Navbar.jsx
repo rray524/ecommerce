@@ -61,7 +61,7 @@ const Navbar = () => {
                         <Search />
                     </SearchContainer>
                 </Left>
-                <Center><Logo>LAMA.</Logo></Center>
+                <Center><Logo>E-ZONEX.</Logo></Center>
                 <Right>
                     <MenuItem>REGISTER</MenuItem>
                     <MenuItem>SIGN IN</MenuItem>
