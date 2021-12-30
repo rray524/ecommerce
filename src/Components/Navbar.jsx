@@ -40,6 +40,10 @@ const SearchContainer = styled.div`
 `
 const Input = styled.input`
     border: none;
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
 `
 const Logo = styled.h1`
     font-weight: bold;
