@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 const Container = styled.div`
     flex:1;
@@ -35,14 +36,16 @@ const Button = styled.button`
     background-color: white;
 `
 const Category = (props) => {
-    const { title, img } = props.item;
+    const { title, img, cat } = props.item;
     return (
         <Container>
-            <Image src={img} />
-            <Info>
-                <Title>{title}</Title>
-                <Button>SHOP NOW</Button>
-            </Info>
+            <Link to={`/products/${cat}`}>
+                <Image src={img} />
+                <Info>
+                    <Title>{title}</Title>
+                    <Button>SHOP NOW</Button>
+                </Info>
+            </Link>
 
         </Container>
     );

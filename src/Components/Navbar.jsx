@@ -4,6 +4,8 @@ import Search from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { mobile } from '../responsive';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Container = styled.div`
     height: 40px;
@@ -63,6 +65,8 @@ const MenuItem = styled.div`
     margin-left: 24px;
 `
 const Navbar = () => {
+    const quantity = useSelector(state => state.cart.quantity);
+
     return (
         <Container>
             <Wrapper>
@@ -73,15 +77,22 @@ const Navbar = () => {
                         <Search />
                     </SearchContainer>
                 </Left>
-                <Center><Logo>E-ZONEX.</Logo></Center>
+                <Center><Link to="/" style={{ textDecoration: 'none', color: '#282c34' }}><Logo>E-ZONEX.</Logo></Link></Center>
                 <Right>
-                    <MenuItem>REGISTER</MenuItem>
-                    <MenuItem>SIGN IN</MenuItem>
-                    <MenuItem>
-                        <Badge badgeContent={4} color="secondary">
-                            <ShoppingCartIcon />
-                        </Badge>
-                    </MenuItem>
+                    <Link to="/register" style={{ textDecoration: "none" }}>
+                        <MenuItem>REGISTER</MenuItem>
+                    </Link>
+                    <Link to="/login" style={{ textDecoration: "none" }}>
+                        <MenuItem>SIGN IN</MenuItem>
+                    </Link>
+                    <Link to="/cart">
+                        <MenuItem>
+                            <Badge badgeContent={quantity} color="secondary">
+                                <ShoppingCartIcon />
+                            </Badge>
+                        </MenuItem>
+                    </Link>
+
                 </Right>
             </Wrapper>
         </Container>

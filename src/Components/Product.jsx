@@ -1,5 +1,6 @@
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
 
@@ -70,9 +71,11 @@ const Product = ({ item }) => {
                 <Icon>
                     <ShoppingCartOutlined></ShoppingCartOutlined>
                 </Icon>
-                <Icon>
-                    <SearchOutlined></SearchOutlined>
-                </Icon>
+                <Link to={`/product/${item._id}`}>
+                    <Icon>
+                        <SearchOutlined></SearchOutlined>
+                    </Icon>
+                </Link>
                 <Icon>
                     <FavoriteBorderOutlined />
                 </Icon>

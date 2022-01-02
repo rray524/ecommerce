@@ -56,22 +56,30 @@ const Link = styled.a`
   text-decoration: underline;
   cursor: pointer;
 `;
+const Logo = styled.h1`
+    font-weight: bold;
+    text-align: center;
+`
 
 const Login = () => {
-    return (
-        <Container>
-            <Wrapper>
-                <Title>SIGN IN</Title>
-                <Form>
-                    <Input placeholder="username" />
-                    <Input placeholder="password" />
-                    <Button>LOGIN</Button>
-                    <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-                    <Link>CREATE A NEW ACCOUNT</Link>
-                </Form>
-            </Wrapper>
-        </Container>
-    );
+  return (
+    <Container>
+
+      <Wrapper>
+        <Link to="/" style={{ textDecoration: 'none', color: '#282c34' }}><Logo>E-ZONEX.</Logo></Link>
+        <Title>SIGN IN</Title>
+        <Form>
+          <Input placeholder="username" />
+          <Input placeholder="password" />
+          <Button>LOGIN</Button>
+          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
+          <Link>CREATE A NEW ACCOUNT</Link>
+        </Form>
+
+      </Wrapper>
+
+    </Container>
+  );
 };
 
 export default Login;

@@ -1,12 +1,17 @@
 import React from 'react';
 // import { useEffect, useState } from "react";
 // import { useSelector } from "react-redux";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import styled from 'styled-components';
+import Announcement from '../Components/Announcement';
+import Footer from '../Components/Footer';
+import Navbar from '../Components/Navbar';
 // import { userRequest } from "../requestMethods";
 
 
 const Success = () => {
-    // const location = useLocation();
+    const location = useLocation();
+    console.log(location);
     // //in Cart.jsx I sent data and cart. Please check that page for the changes.(in video it's only data)
     // const data = location.state.stripeData;
     // const cart = location.state.cart;
@@ -30,24 +35,32 @@ const Success = () => {
     //     };
     //     data && createOrder();
     // }, [cart, data, currentUser]);
-
+    const Container = styled.div``;
     return (
-        <div
-            style={{
-                height: "100vh",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-            }}
-        >
-            {/* {orderId
+        <Container>
+            <Navbar />
+            <div style={{ padding: '10px 0' }}></div>
+            <Announcement />
+            <div
+                style={{
+                    height: "100vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}
+            >
+                {/* {orderId
                 ? `Order has been created successfully. Your order number is ${orderId}`
                 : `Successful. Your order is being prepared...`}
             <button style={{ padding: 10, marginTop: 20 }}>Go to Homepage</button> */}
-            <h2>Successful</h2>
-            <p>You order is being prepared. Thanks for choosing E-ZONEX</p>
-        </div>
+                <h2>Successful</h2>
+                <p>You order is being prepared. Thanks for choosing E-ZONEX</p>
+
+            </div>
+            <Footer />
+        </Container>
+
     );
 };
 
