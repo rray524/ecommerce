@@ -16,8 +16,9 @@ import Pay from './Pages/Pay';
 import Success from './Pages/Success';
 import ProductSingle from './Pages/ProductSingle';
 import ScrollToTop from './Components/ScrollToTop';
+import { useSelector } from 'react-redux';
 function App() {
-  const user = false;
+  const user = useSelector((state) => state.user.currentUser);
   return (
     <div className="main">
       <Router>
