@@ -1,12 +1,13 @@
 import { Add, Remove } from '@mui/icons-material';
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 import styled from 'styled-components';
 import Announcement from '../Components/Announcement';
 import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar';
+import { removeProduct } from '../Redux/cartRedux';
 import { userRequest } from '../requestMethods';
 import { mobile } from '../responsive';
 
@@ -165,6 +166,7 @@ const Cart = () => {
   const cart = useSelector(state => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
+  const dispatch = useDispatch();
   const onToken = (token) => {
     setStripeToken(token);
   };
@@ -200,7 +202,7 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            {cart.products.map(product => (<Product>
+            {cart.products.map(product => (<Product key={product._id}>
               <ProductDetail>
                 <Image src={product.img} />
                 <Details>
@@ -224,8 +226,11 @@ const Cart = () => {
                 </ProductAmountContainer>
                 <ProductPrice>$ {product.quantity * product.price}</ProductPrice>
               </PriceDetail>
+              <TopButton onClick={() => dispatch(removeProduct(cart.products._id))}>Remove</TopButton>
+
             </Product>))}
             <Hr />
+
 
           </Info>
           <Summary>

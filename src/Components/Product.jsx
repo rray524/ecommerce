@@ -1,5 +1,4 @@
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
@@ -63,6 +62,7 @@ width: 40px;
   }
 `
 const Product = ({ item }) => {
+
     return (
         <Container>
             <Circle />
