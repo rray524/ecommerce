@@ -18,7 +18,7 @@ import ProductSingle from './Pages/ProductSingle';
 import ScrollToTop from './Components/ScrollToTop';
 import { useSelector } from 'react-redux';
 function App() {
-  const user = useSelector((state) => state.user.currentUser);
+  const user = useSelector((state) => state.user.currentUser)
   return (
     <div className="main">
       <Router>
